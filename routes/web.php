@@ -13,10 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/', function () {
     return view('homepage');
 });
+
+Route::get('/about', function () {
+    $data = [
+        'name' => 'John Doe',
+    ];
+    return view('about', $data);
+})->name('about');
